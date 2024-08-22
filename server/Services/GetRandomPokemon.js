@@ -21,9 +21,6 @@ function getRandomPokemon() {
       pokemonData.sprite = pokemonDataRes.sprites.front_default;
       pokemonData.description = pokedexDataRes.flavor_text_entries[1].flavor_text;
 
-      console.log('this is res ', pokemonDataRes);
-      console.log(pokemonData);
-
       randomPokemonEncounterCache[pokemonNum] = pokemonData;
       res.status(200).send(pokemonData);
       next();
