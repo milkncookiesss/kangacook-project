@@ -1,5 +1,6 @@
 import pokemonRng from "../Helpers/randomNumGen.js";
 import fetch from "node-fetch";
+import { randomPokemonEncounterCache } from "../Helpers/TempCache.js";
 
 function getRandomPokemon() {
   return async (req, res, next) => {
@@ -22,6 +23,8 @@ function getRandomPokemon() {
 
       console.log('this is res ', pokemonDataRes);
       console.log(pokemonData);
+
+      randomPokemonEncounterCache[pokemonNum] = pokemonData;
       res.status(200).send(pokemonData);
       next();
     } catch (err) {
