@@ -17,10 +17,10 @@ function getRandomPokemon() {
       pokemonData.num = pokemonNum;
       pokemonData.height = (pokemonDataRes.height/10) + " meters";
       pokemonData.weight = (pokemonDataRes.weight * 100) + " grams";
+      pokemonData.sprite = pokemonDataRes.sprites.front_default;
       pokemonData.description = pokedexDataRes.flavor_text_entries[1].flavor_text;
 
-      console.log('this is res ', pokemonResponse);
-      console.log('pokedex res ', pokedexDataRes)
+      console.log('this is res ', pokemonDataRes);
       console.log(pokemonData);
       res.status(200).send(pokemonData);
       next();
